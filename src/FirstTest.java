@@ -38,7 +38,7 @@ public class FirstTest {
     @After
     public void tearDown()
     {
-       driver.quit();
+        driver.quit();
     }
 
 
@@ -138,12 +138,25 @@ public class FirstTest {
 
         Assert.assertEquals(
                 "We see unexpected title!",
-                "Jav",
+                "Java",
                 article_title
         );
+        System.out.println("testCompareArticleTitle - OK");
+    }
 
-//        System.out.println("Название статейки - " + article_title);
-
+    @Test
+    public void assertTitleTest()
+    {
+        WebElement ttt = waitForElementAndAssert(
+                By.xpath("//*[contains(@text,'Поиск по Википедии')]"),
+                "Cannot find 'Поиск по Википедии'change xpath in newTest",
+                5,
+                "We see unexpected title!",
+                "Поиск по Википедии"
+        );
+        String article_title = ttt.getAttribute("text");
+        System.out.println(article_title);
+        System.out.println("assertTitleTest - OK");
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
@@ -160,16 +173,16 @@ public class FirstTest {
         return waitForElementPresent(by,error_message, 5);
     }
 
-    private WebElement waitForElementAndClick(By by, String error_masage, long timeoutInSeconds)
+    private WebElement waitForElementAndClick(By by, String error_message, long timeoutInSeconds)
     {
-        WebElement element = waitForElementPresent(by, error_masage, 5);
+        WebElement element = waitForElementPresent(by, error_message, 5);
         element.click();
         return element;
     }
 
-    private WebElement waitForElementAndSendKeys(By by, String value, String error_masage, long timeoutInSeconds)
+    private WebElement waitForElementAndSendKeys(By by, String value, String error_message, long timeoutInSeconds)
     {
-        WebElement element = waitForElementPresent(by, error_masage, 5);
+        WebElement element = waitForElementPresent(by, error_message, 5);
         element.sendKeys(value);
         return element;
     }
@@ -191,5 +204,17 @@ public class FirstTest {
         return element;
     }
 
-}
 
+    private WebElement waitForElementAndAssert(By by, String error_message, long timeoutInSeconds, String assertMassage, String expected  )
+    {
+        WebElement element = waitForElementPresent(by, error_message, 5);
+        String article_title = element.getAttribute("text");
+        Assert.assertEquals(
+                assertMassage,
+                expected,
+                article_title);
+        return element;
+    }
+
+
+}
