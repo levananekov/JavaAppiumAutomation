@@ -9,8 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.net.URL;
+import java.util.List;
 
 public class FirstTest {
 
@@ -157,6 +157,51 @@ public class FirstTest {
         System.out.println("assertTitleTest - OK");
     }
 
+    @Test
+    public void testSearchAndCancelSearch()
+    {
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_container"),
+                "Cannot find 'Поиск по Википедии' input.",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[@text='Поиск']"),
+                "Python",
+                "Cannot find search input.",
+                10
+        );
+
+        waitForElementPresent(
+                By.id("org.wikipedia:id/page_list_item_title"),
+                "Cannot find 'page_list_item_title' in title",
+                10
+        );
+
+        int item_title = driver.findElements(By.id("org.wikipedia:id/page_list_item_title")).size();
+        System.out.println(item_title);
+        Assert.assertEquals(
+                "Not found elements and it is no good)",
+                (item_title >= 2),
+                true
+        );
+
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_close_btn"),
+                "Cannot find 'X' to cancel search",
+                5
+        );
+
+        waitForElementNotPresent(
+                By.id("org.wikipedia:id/page_list_item_title"),
+                "'page_list_item_title' is still present on the page.",
+                5
+        );
+
+        System.out.println("testSearchAndCancelSearch - OK");
+    }
+
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
     {
@@ -186,7 +231,6 @@ public class FirstTest {
         return element;
     }
 
-
     private boolean waitForElementNotPresent (By by, String error_message, long timeoutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -203,8 +247,7 @@ public class FirstTest {
         return element;
     }
 
-
-    private void assertPresenceOfElement(By by, String error_message, long timeoutInSeconds, String assertMassage, String expected  )
+    private void assertPresenceOfElement(By by, String error_message, long timeoutInSeconds, String assertMassage, String expected)
     {
         WebElement element = waitForElementPresent(by, error_message, 5);
         String article_title = element.getAttribute("text");
