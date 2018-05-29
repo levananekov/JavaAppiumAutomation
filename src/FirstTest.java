@@ -144,18 +144,18 @@ public class FirstTest {
         System.out.println("testCompareArticleTitle - OK");
     }
 
-//    @Test
-//    public void assertTitleTest()
-//    {
-//        assertPresenceOfElement(
-//                By.xpath("//*[contains(@text,'Поиск по Википедии')]"),
-//                "Cannot find 'Поиск по Википедии'change xpath in newTest",
-//                5,
-//                "We see unexpected title assertTitleTest!",
-//                "Поиск по Википедии"
-//        );
-//        System.out.println("assertTitleTest - OK");
-//    }
+    @Test
+    public void assertTitleTest()
+    {
+        assertPresenceOfElement(
+                By.xpath("//*[contains(@text,'Поиск по Википедии')]"),
+                "Cannot find 'Поиск по Википедии'change xpath in newTest",
+                5,
+                "We see unexpected title assertTitleTest!",
+                "Поиск по Википедии"
+        );
+        System.out.println("assertTitleTest - OK");
+    }
 
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
@@ -204,14 +204,14 @@ public class FirstTest {
     }
 
 
-//    private void assertPresenceOfElement(By by, String error_message, long timeoutInSeconds, String assertMassage, String expected  )
-//    {
-//        WebElement element = waitForElementPresent(by, error_message, 5);
-//        String article_title = element.getAttribute("text");
-//        Assert.assertEquals(
-//                assertMassage,
-//                expected,
-//                article_title);
-//    }
+    private void assertPresenceOfElement(By by, String error_message, long timeoutInSeconds, String assertMassage, String expected  )
+    {
+        WebElement element = waitForElementPresent(by, error_message, 5);
+        String article_title = element.getAttribute("text");
+        Assert.assertEquals(
+                assertMassage,
+                expected,
+                article_title);
+    }
 
 }
