@@ -201,7 +201,50 @@ public class FirstTest {
 
         System.out.println("testSearchAndCancelSearch - OK");
     }
-    
+
+    @Test
+    public void testCompareAllHeadlines()
+    {
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_container"),
+                "Cannot find 'Поиск по Википедии' input.",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[@text='Поиск']"),
+                "pentium",
+                "Cannot find search input.",
+                5
+        );
+
+        WebElement titile_element = waitForElementPresent(
+                By.id("org.wikipedia:id/page_list_item_title"),
+                "Cannot find 'page_list_item_title' in title",
+                10
+        );
+
+        assertPresenceOfElement(
+                By.id("org.wikipedia:id/page_list_item_title"),
+                "Cannot find 'Pentium'please change id.",
+                5,
+                "We see unexpected value!",
+                "Pentium"
+        );
+
+        List <WebElement> article_title = driver.findElements(By.id("org.wikipedia:id/page_list_item_title"));
+//        System.out.println("штук: " + article_title.size());
+//        System.out.println("Название: " + titile_element.getText());
+
+        String titile_element_text = titile_element.getText();
+        for (WebElement title : article_title) {
+            String display_title = title.getAttribute("text");
+            Assert.assertTrue("Cannot find 'Pentium' title for each article.",
+                    display_title.contains(titile_element_text));
+//            Метод contains() - сверяет с тем что в скобках(не строго)
+        }
+    }
+
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
