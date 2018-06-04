@@ -201,8 +201,7 @@ public class FirstTest {
 
         System.out.println("testSearchAndCancelSearch - OK");
     }
-
-
+    
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -256,5 +255,4 @@ public class FirstTest {
                 expected,
                 article_title);
     }
-
 }
