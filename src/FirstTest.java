@@ -252,21 +252,21 @@ public class FirstTest {
     public void testSwipeArticle()
     {
         waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Поиск по Википедии')]"),
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find 'Поиск по Википедии' input.",
                 5
         );
 
         waitForElementAndSendKeys(
-                By.xpath("//*[@text='Поиск']"),
-                "Java",
+                By.xpath("//*[@text='Search…']"),
+                "Appium",
                 "Cannot find search input.",
                 5
         );
 
         waitForElementAndClick(
-                By.xpath("//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='Язык программирования']"),
-                "Cannot find 'Поиск по Википедии' input.",
+                By.xpath("//*[@resource-id ='org.wikipedia:id/page_list_item_title'][@text='Appium']"),
+                "Cannot find 'Appium' in search.",
                 5
         );
 
@@ -276,11 +276,11 @@ public class FirstTest {
                 15
         );
 
-        swipeUp(2000);
-        swipeUp(2000);
-        swipeUp(2000);
-        swipeUp(2000);
-        swipeUp(2000);
+        swipeUpToFindElement(By.xpath("//*[@text='View page in browser']"),
+                "Cannot find the end of the article.",
+                20
+        );
+
     }
 
 
@@ -347,5 +347,23 @@ public class FirstTest {
         int start_y = (int) (size.height * 0.8);
         int end_y = (int) (size.height * 0.2);
         action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x, end_y).release().perform();
+    }
+
+    protected void swipUpQuick ()
+    {
+        swipeUp(200);
+    }
+
+    protected void swipeUpToFindElement(By by, String error_message, int max_swipes)
+    {
+        int already_swip = 0;
+        while (driver.findElements(by).size() == 0){
+        if (already_swip > max_swipes){
+            waitForElementPresent(by, "Cannot find element by swipingUP. \n" + error_message, 0);
+            return;
+        }
+        swipUpQuick();
+        ++already_swip;
+        }
     }
 }
