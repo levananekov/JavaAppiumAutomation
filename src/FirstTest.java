@@ -406,6 +406,36 @@ public class FirstTest {
         );
     }
 
+    @Test
+    public void testAmountOfEmptySearch()
+    {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Поиск по Википедии' input.",
+                5
+        );
+
+        String search_line = "fasdfasdfsd";
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[@text='Search…']"),
+                search_line,
+                "Cannot find search input.",
+                5
+        );
+
+        String search_result_locator = "//*[@resource-id = 'org.wikipedia:id/search_results_list']/*[@resource-id = 'org.wikipedia:id/page_list_item_container']";
+        String empty_resault_label = "//*[@text = 'No results found']";
+
+        waitForElementPresent(
+                By.xpath(empty_resault_label),
+                "Cannot find empty result label by the request" + search_line,
+                15);
+
+        assertElementNotPresent(
+                By.xpath(search_result_locator),
+                "We've found some results by request " + search_line);
+    }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -513,41 +543,7 @@ public class FirstTest {
             throw new AssertionError(default_massage +" "+ error_message);
         }
     }
-
-    @Test
-    public void testAmountOfEmptySearch()
-    {
-        waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-                "Cannot find 'Поиск по Википедии' input.",
-                5
-        );
-
-        String search_line = "fasdfasdfsd";
-
-        waitForElementAndSendKeys(
-                By.xpath("//*[@text='Search…']"),
-                search_line,
-                "Cannot find search input.",
-                5
-        );
-
-        String search_result_locator = "//*[@resource-id = 'org.wikipedia:id/search_results_list']/*[@resource-id = 'org.wikipedia:id/page_list_item_container']";
-        String empty_resault_label = "//*[@text = 'No results found']";
-
-        waitForElementPresent(
-                By.xpath(empty_resault_label),
-                "Cannot find empty result label by the request" + search_line,
-                15);
-
-        assertElementNotPresent(
-                By.xpath(search_result_locator),
-                        "Weve found some results by request " + search_line);
-
-
-    }
-
-
+    
 
 }
 
