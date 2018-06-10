@@ -678,6 +678,37 @@ public class FirstTest {
         );
     }
 
+    @Test
+    public void testAssertTitle()
+    {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Поиск по Википедии' input.",
+                5
+        );
+
+        String article_title = "Java";
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[@text='Search…']"),
+                article_title,
+                "Cannot find search input.",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Cannot find 'Object-oriented programming language' input.",
+                5
+        );
+
+        assertElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find ArticleTitle"
+
+        );
+    }
+
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
@@ -787,8 +818,16 @@ public class FirstTest {
 
     private String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeoutInSeconds)
     {
-     WebElement element = waitForElementPresent(by,error_message,timeoutInSeconds);
-     return element.getAttribute(attribute);
+        WebElement element = waitForElementPresent(by,error_message,timeoutInSeconds);
+        return element.getAttribute(attribute);
+    }
+
+    private  void assertElementPresent(By by, String error_message)
+    {
+        Assert.assertTrue(
+                error_message,
+                driver.findElements(by).size() >= 1
+        );
     }
 }
 

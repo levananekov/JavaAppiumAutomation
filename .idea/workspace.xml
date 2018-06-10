@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a20f261f-3bab-4737-be8f-b7fd8888a0dc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/FirstTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,15 +18,15 @@
       <file leaf-file-name="FirstTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="678" column="5" selection-start-line="678" selection-start-column="5" selection-end-line="678" selection-end-column="5" />
+            <state relative-caret-position="573">
+              <caret line="709" column="5" selection-start-line="709" selection-start-column="5" selection-end-line="709" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1394#1395#0" expanded="true" />
                 <element signature="e#1423#1424#0" expanded="true" />
                 <element signature="e#19805#19806#0" expanded="true" />
                 <element signature="e#19833#19834#0" expanded="true" />
-                <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+                <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
               </folding>
             </state>
           </provider>
@@ -128,7 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FirstTest.saveSecondArticleToMyList">
+  <component name="RunManager" selected="JUnit.FirstTest.testAssertTitle">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -183,13 +184,13 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="FirstTest.testChangeOrientationOnSearchResults" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FirstTest.testAssertTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="testChangeOrientationOnSearchResults" />
+      <option name="METHOD_NAME" value="testAssertTitle" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -274,19 +275,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.FirstTest" />
-      <item itemvalue="JUnit.FirstTest.testChangeOrientationOnSearchResults" />
       <item itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
       <item itemvalue="JUnit.FirstTest.testHYI" />
       <item itemvalue="JUnit.FirstTest.saveFirstArticleToMyList" />
       <item itemvalue="JUnit.FirstTest.saveSecondArticleToMyList" />
+      <item itemvalue="JUnit.FirstTest.testAssertTitle" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FirstTest.testAssertTitle" />
         <item itemvalue="JUnit.FirstTest.saveSecondArticleToMyList" />
         <item itemvalue="JUnit.FirstTest.saveFirstArticleToMyList" />
         <item itemvalue="JUnit.FirstTest.testHYI" />
         <item itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
-        <item itemvalue="JUnit.FirstTest.testChangeOrientationOnSearchResults" />
       </list>
     </recent_temporary>
   </component>
@@ -304,15 +305,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstTest_saveSecondArticleToMyList - 2018.06.10 at 15h 25m 07s.xml">
-      <configuration name="FirstTest.saveSecondArticleToMyList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest_saveSecondArticleToMyList - 2018.06.10 at 15h 28m 30s.xml">
-      <configuration name="FirstTest.saveSecondArticleToMyList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest_saveSecondArticleToMyList - 2018.06.10 at 15h 32m 03s.xml">
-      <configuration name="FirstTest.saveSecondArticleToMyList" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FirstTest_saveSecondArticleToMyList - 2018.06.10 at 15h 34m 20s.xml">
       <configuration name="FirstTest.saveSecondArticleToMyList" configurationId="JUnit" />
     </history-entry>
@@ -333,6 +325,15 @@
     </history-entry>
     <history-entry file="FirstTest_saveSecondArticleToMyList - 2018.06.10 at 15h 47m 45s.xml">
       <configuration name="FirstTest.saveSecondArticleToMyList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_testAssertTitle - 2018.06.10 at 16h 41m 42s.xml">
+      <configuration name="FirstTest.testAssertTitle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_testAssertTitle - 2018.06.10 at 16h 42m 32s.xml">
+      <configuration name="FirstTest.testAssertTitle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_testAssertTitle - 2018.06.10 at 16h 43m 01s.xml">
+      <configuration name="FirstTest.testAssertTitle" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -362,6 +363,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18168813" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
       <window_info id="UI Designer" order="4" />
@@ -373,7 +375,6 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -399,7 +400,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -414,7 +415,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -429,7 +430,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -444,7 +445,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -459,7 +460,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -474,7 +475,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -489,7 +490,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -504,7 +505,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -519,7 +520,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -534,7 +535,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -549,7 +550,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -564,7 +565,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -579,7 +580,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -594,7 +595,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -609,7 +610,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -624,7 +625,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -639,7 +640,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -654,7 +655,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
@@ -729,15 +730,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="678" column="5" selection-start-line="678" selection-start-column="5" selection-end-line="678" selection-end-column="5" />
+        <state relative-caret-position="573">
+          <caret line="709" column="5" selection-start-line="709" selection-start-column="5" selection-end-line="709" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1394#1395#0" expanded="true" />
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528627775342" expanded="true" signature="4404:4809" ph="..." />
+            <marker date="1528631016080" expanded="true" signature="4404:4809" ph="..." />
           </folding>
         </state>
       </provider>
