@@ -29,6 +29,9 @@ public class FirstTest {
         capabilities.setCapability("appPackage", "org.wikipedia");
         capabilities.setCapability("appActivity", ".main.MainActivity");
         capabilities.setCapability("app", "/Users/levananenkov/Desktop/JavaAppiumAutomation/apks/org.wikipedia.apk");
+        capabilities.setCapability("orientation", "PORTRAIT");
+        // PORTRAIT/LANDSCAPE  https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md
+//        вот беда оно переворачивает с ног на голову эмулятор если менять оринетацию эмулятора в ручну (ее не трогать)
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 //      http://localhost:4723)
@@ -702,11 +705,15 @@ public class FirstTest {
                 5
         );
 
+
+
         assertElementPresent(
                 By.id("org.wikipedia:id/view_page_title_text"),
                 "Cannot find ArticleTitle"
-
         );
+
+        driver.rotate(ScreenOrientation.LANDSCAPE);
+
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
