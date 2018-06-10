@@ -704,16 +704,11 @@ public class FirstTest {
                 "Cannot find 'Object-oriented programming language' input.",
                 5
         );
-
-
-
+        
         assertElementPresent(
                 By.id("org.wikipedia:id/view_page_title_text"),
                 "Cannot find ArticleTitle"
         );
-
-        driver.rotate(ScreenOrientation.LANDSCAPE);
-
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {

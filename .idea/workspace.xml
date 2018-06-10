@@ -17,15 +17,15 @@
       <file leaf-file-name="FirstTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="705" column="10" selection-start-line="705" selection-start-column="10" selection-end-line="705" selection-end-column="10" />
+            <state relative-caret-position="222">
+              <caret line="706" column="8" selection-start-line="706" selection-start-column="8" selection-end-line="706" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1394#1395#0" expanded="true" />
                 <element signature="e#1423#1424#0" expanded="true" />
                 <element signature="e#19805#19806#0" expanded="true" />
                 <element signature="e#19833#19834#0" expanded="true" />
-                <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+                <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
               </folding>
             </state>
           </provider>
@@ -305,12 +305,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstTest_testAssertTitle - 2018.06.10 at 17h 12m 56s.xml">
-      <configuration name="FirstTest.testAssertTitle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest_testAssertTitle - 2018.06.10 at 17h 13m 31s.xml">
-      <configuration name="FirstTest.testAssertTitle" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FirstTest_testAssertTitle - 2018.06.10 at 17h 13m 32s.xml">
       <configuration name="FirstTest.testAssertTitle" configurationId="JUnit" />
     </history-entry>
@@ -333,6 +327,12 @@
       <configuration name="FirstTest.testAssertTitle" configurationId="JUnit" />
     </history-entry>
     <history-entry file="FirstTest_testAssertTitle - 2018.06.10 at 17h 22m 09s.xml">
+      <configuration name="FirstTest.testAssertTitle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_testAssertTitle - 2018.06.10 at 17h 23m 25s.xml">
+      <configuration name="FirstTest.testAssertTitle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_testAssertTitle - 2018.06.10 at 17h 24m 26s.xml">
       <configuration name="FirstTest.testAssertTitle" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -400,7 +400,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -415,7 +415,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -430,7 +430,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -445,7 +445,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -460,7 +460,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -475,7 +475,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -490,7 +490,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -505,7 +505,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -520,7 +520,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -535,7 +535,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -550,7 +550,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -565,7 +565,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -580,7 +580,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -595,7 +595,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -610,7 +610,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -625,7 +625,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -640,7 +640,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -655,7 +655,7 @@
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
@@ -730,15 +730,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="705" column="10" selection-start-line="705" selection-start-column="10" selection-end-line="705" selection-end-column="10" />
+        <state relative-caret-position="222">
+          <caret line="706" column="8" selection-start-line="706" selection-start-column="8" selection-end-line="706" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1394#1395#0" expanded="true" />
             <element signature="e#1423#1424#0" expanded="true" />
             <element signature="e#19805#19806#0" expanded="true" />
             <element signature="e#19833#19834#0" expanded="true" />
-            <marker date="1528633355391" expanded="true" signature="4646:5051" ph="..." />
+            <marker date="1528633744274" expanded="true" signature="4702:5107" ph="..." />
           </folding>
         </state>
       </provider>
