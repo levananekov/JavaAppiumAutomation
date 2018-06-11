@@ -1,5 +1,6 @@
 import lib.CoreTestCase;
 import lib.ui.MainPageObject;
+import lib.ui.SearchPageObject;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.*;
@@ -18,43 +19,28 @@ public class FirstTest extends CoreTestCase {
     }
 
 
-
-    @Test
-    public void testSearch() {
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Поиск по Википедии')]"),
-                "Cannot find 'Поиск по Википедии' input.",
-                5
-        );
-
-        MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[@text='Поиск']"),
-                "Java",
-                "Cannot find search input.",
-                5
-        );
-
-//    "//*[@text='Поиск']" - Строго.
+    //    "//*[@text='Поиск']" - Строго.
 //    "//*[contains(@text,'Поиск')]" - До первого совпадения.
-
-        MainPageObject.waitForElementPresent(
-                By.xpath("//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='Язык программирования']"),
-                "Cannot find 'Язык программирования' topic searching by 'Java'.",
-                15
-        );
-        System.out.println("First test - OK");
+    @Test
+    public void testSearch()
+    {
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Java");
+        SearchPageObject.waitForSearchResult("Object-oriented programming language");
     }
 
     @Test
-    public void testCancelSearch() {
+    public void testCancelSearch()
+    {
         MainPageObject.waitForElementAndClick(
-                By.id("org.wikipedia:id/search_container"),
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find 'Поиск по Википедии' input.",
                 5
         );
 
         MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[@text='Поиск']"),
+                By.xpath("//*[@text='Search…']"),
                 "Java",
                 "Cannot find search input.",
                 5
@@ -84,20 +70,20 @@ public class FirstTest extends CoreTestCase {
     @Test
     public void testCompareArticleTitle() {
         MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Поиск по Википедии')]"),
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find 'Поиск по Википедии' input.",
                 5
         );
 
         MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[@text='Поиск']"),
+                By.xpath("//*[@text='Search…']"),
                 "Java",
                 "Cannot find search input.",
-                5
+                15
         );
 
         MainPageObject.waitForElementAndClick(
-                By.xpath("//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='Язык программирования']"),
+                By.xpath("//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
                 "Cannot find 'Поиск по Википедии' input.",
                 5
         );
@@ -112,7 +98,7 @@ public class FirstTest extends CoreTestCase {
 
         Assert.assertEquals(
                 "We see unexpected title!",
-                "Java",
+                "Java (programming language)",
                 article_title
         );
         System.out.println("testCompareArticleTitle - OK");
@@ -121,11 +107,11 @@ public class FirstTest extends CoreTestCase {
     @Test
     public void testAssertTitleTest() {
         MainPageObject.assertPresenceOfElement(
-                By.xpath("//*[contains(@text,'Поиск по Википедии')]"),
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find 'Поиск по Википедии'change xpath in newTest",
                 5,
                 "We see unexpected title assertTitleTest!",
-                "Поиск по Википедии"
+                "Search Wikipedia"
         );
         System.out.println("assertTitleTest - OK");
     }
@@ -133,13 +119,13 @@ public class FirstTest extends CoreTestCase {
     @Test
     public void testSearchAndCancelSearch() {
         MainPageObject.waitForElementAndClick(
-                By.id("org.wikipedia:id/search_container"),
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find 'Поиск по Википедии' input.",
                 5
         );
 
         MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[@text='Поиск']"),
+                By.xpath("//*[@text='Search…']"),
                 "Python",
                 "Cannot find search input.",
                 10
@@ -166,7 +152,7 @@ public class FirstTest extends CoreTestCase {
         );
 
         MainPageObject.waitForElementNotPresent(
-                By.id("org.wikipedia:id/page_list_item_title"),
+                By.id("org.wikipedia:id/page_list_item_container"),
                 "'page_list_item_title' is still present on the page.",
                 5
         );
@@ -177,13 +163,13 @@ public class FirstTest extends CoreTestCase {
     @Test
     public void testCompareAllHeadlines() {
         MainPageObject.waitForElementAndClick(
-                By.id("org.wikipedia:id/search_container"),
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find 'Поиск по Википедии' input.",
                 5
         );
 
         MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[@text='Поиск']"),
+                By.xpath("//*[@text='Search…']"),
                 "pentium",
                 "Cannot find search input.",
                 5
@@ -677,8 +663,13 @@ public class FirstTest extends CoreTestCase {
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
                 "Cannot find 'Object-oriented programming language' input.",
-                5
+                15
         );
+
+        MainPageObject.waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find 'page_title_text' input",
+                5);
 
         MainPageObject.assertElementPresent(
                 By.id("org.wikipedia:id/view_page_title_text"),
