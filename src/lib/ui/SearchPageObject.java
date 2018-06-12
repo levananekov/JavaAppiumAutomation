@@ -18,7 +18,7 @@ public class SearchPageObject extends MainPageObject{
     }
 
     /* TEMPLATES METHODS */
-    private static String getResaultSearchElemtnt(String substring)
+    private static String getResultSearchElement(String substring)
     {
         return SEARCH_RESULT_BY_SUBSTRING_TPL.replace("{SUBSTRING}",substring);
     }
@@ -53,7 +53,13 @@ public class SearchPageObject extends MainPageObject{
 
     public void waitForSearchResult(String substring)
     {
-        String search_result_xpath = getResaultSearchElemtnt(substring);
+        String search_result_xpath = getResultSearchElement(substring);
         this.waitForElementPresent(By.xpath(search_result_xpath),"Cannot find search result with substring"+substring);
+    }
+
+    public void clickByArticleWishSubtring(String substring)
+    {
+        String search_result_xpath = getResultSearchElement(substring);
+        this.waitForElementAndClick(By.xpath(search_result_xpath),"Cannot find and click search result with substring"+substring,10);
     }
 }
