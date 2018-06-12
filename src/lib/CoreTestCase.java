@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
@@ -35,6 +36,9 @@ public class CoreTestCase extends TestCase {
 
         driver = new AndroidDriver(new URL(AppiumURL), capabilities);
 //      http://localhost:4723)
+//
+//
+//      this.rotateScreenPortrait(); - чет сомнительно, а надо ли это, тоже после запуска переход в портрет
     }
 
     @Override
@@ -44,5 +48,20 @@ public class CoreTestCase extends TestCase {
 
         super.tearDown();
     }
+
+    protected void rotateScreenPortrait()
+    {
+        driver.rotate(ScreenOrientation.PORTRAIT);
+    }
+    protected void rotateScreenLandscape()
+    {
+        driver.rotate(ScreenOrientation.LANDSCAPE);
+    }
+
+    protected void backgroundApp(int seconds)
+    {
+        driver.runAppInBackground(seconds);
+    }
+
 
 }
