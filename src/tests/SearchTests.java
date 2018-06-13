@@ -52,4 +52,24 @@ public class SearchTests extends CoreTestCase
         SearchPageObject.waitForEmptyResultsLable();
         SearchPageObject.assertThereIsNoResultOfSearch();
     }
+
+    @Test
+    public void testSearchAndCancelSearch() {
+
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Python");
+        int item_title = SearchPageObject.getAmountOfFoundArticls();
+
+//        System.out.println(item_title);
+        assertEquals(
+                "Not found elements and it is no good)",
+                (item_title >= 2),
+                true
+        );
+
+        SearchPageObject.clickCancelSearch();
+        SearchPageObject.waitEmptyResultsAfterCancelSearch();
+    }
 }

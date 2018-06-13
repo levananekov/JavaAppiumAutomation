@@ -4,7 +4,6 @@ import lib.CoreTestCase;
 import lib.ui.ArticlePageObject;
 import lib.ui.SearchPageObject;
 import org.junit.Test;
-import org.openqa.selenium.By;
 
 public class ArticleTests extends CoreTestCase
 {
@@ -42,4 +41,32 @@ public class ArticleTests extends CoreTestCase
         ArticlePageObject.swipeToFooter();
     }
 
+    @Test
+    public void testAssertTitleTest() {
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.assertPresenceSearchFieldOnPage("Search Wikipedia");
+    }
+
+    @Test
+    public void testCompareAllHeadlines() {
+
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Python");
+        SearchPageObject.assertPresenceItemTitleElement("Python");
+        SearchPageObject.waitForAllHeadlinesResultInPage();
+    }
+
+    @Test
+    public void testAssertTitle() {
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Java");
+        SearchPageObject.clickByArticleWishSubtring("Object-oriented programming language");
+
+        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+//        ArticlePageObject.waitForTitleElement(); - Для проверки работоспособности.
+        ArticlePageObject.assertTitleElementPresent();
+    }
 }

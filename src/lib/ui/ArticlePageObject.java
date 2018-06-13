@@ -14,7 +14,8 @@ public class ArticlePageObject extends MainPageObject
         ADD_TO_MY_LIST_OVERLAY = "org.wikipedia:id/onboarding_button",
         MY_LIST_NAME_INPUT = "org.wikipedia:id/text_input",
         MY_LIST_OK_BUTTON = "//*[@text= 'OK']",
-        CLOSE_ARTICLE_BUTTON = "//android.widget.ImageButton[@content-desc= 'Navigate up']";
+        CLOSE_ARTICLE_BUTTON = "//android.widget.ImageButton[@content-desc= 'Navigate up']",
+        TITLE_ARTICLE_ELEMENT ="org.wikipedia:id/view_page_title_text";
 
 
 
@@ -95,4 +96,37 @@ public class ArticlePageObject extends MainPageObject
                 5
                 );
     }
+
+    public void addArticleToMyListAgain(String name_of_folder)
+    {
+        this.waitForElementAndClick(
+                By.xpath(OPTIONS_BUTTON),
+                "Cannot find button to open article options",
+                5
+        );
+
+        this.waitForElementAndClick(
+                By.xpath(OPTIONS_ADD_TO_MY_LIST_BUTTON),
+                "Cannot find options to add article to reading list ",
+                5
+        );
+
+        this.waitForElementAndClick(
+                By.xpath("//*[@resource-id = 'org.wikipedia:id/list_of_lists']//*[@text='" + name_of_folder + "']"),
+                "Cannot find 'General-purpose, high-level programming language' input.",
+                5
+        );
+
+        this.waitForElementAndClick(
+                By.xpath("//android.widget.ImageButton[@content-desc= 'Navigate up']"),
+                "Cannot close article, cannot find 'X' link.",
+                5);
+    }
+
+    public void assertTitleElementPresent()
+    {
+        this.assertElementPresent(By.id(TITLE_ARTICLE_ELEMENT),
+                "Cannot find ArticleTitle");
+    }
+
 }

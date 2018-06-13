@@ -139,5 +139,4 @@ public class MainPageObject {
                 driver.findElements(by).size() >= 1
         );
     }
-
 }

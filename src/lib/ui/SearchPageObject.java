@@ -2,6 +2,11 @@ package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
+
+import static junit.framework.TestCase.assertTrue;
 
 public class SearchPageObject extends MainPageObject{
 
@@ -11,7 +16,9 @@ public class SearchPageObject extends MainPageObject{
         SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='{SUBSTRING}']",
         SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn",
         SEARCH_RESULT_ELEMENT = "//*[@resource-id = 'org.wikipedia:id/search_results_list']/*[@resource-id = 'org.wikipedia:id/page_list_item_container']",
-        SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text ='No results found']";
+        SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text ='No results found']",
+        SEARCH_INPUT_TEXT = "{SUBSTRING}",
+        SEARCH_RESULT_CONTAINER ="org.wikipedia:id/page_list_item_title";
 
 
     public SearchPageObject(AppiumDriver driver)
@@ -23,6 +30,11 @@ public class SearchPageObject extends MainPageObject{
     private static String getResultSearchElement(String substring)
     {
         return SEARCH_RESULT_BY_SUBSTRING_TPL.replace("{SUBSTRING}",substring);
+    }
+
+    private static String SearchInputElement(String expected)
+    {
+        return SEARCH_INPUT_TEXT.replace("{SUBSTRING}",expected);
     }
     /* TEMPLATES METHODS */
 
@@ -67,10 +79,7 @@ public class SearchPageObject extends MainPageObject{
 
     public int getAmountOfFoundArticls()
     {
-        this.waitForElementPresent(
-                By.xpath(SEARCH_RESULT_ELEMENT),
-                "Cannot find anything by the request ",
-                15
+        this.waitForElementPresent(By.xpath(SEARCH_RESULT_ELEMENT), "Cannot find anything by the request ", 15
         );
         return this.getAmountOfElements(By.xpath(SEARCH_RESULT_ELEMENT));
     }
@@ -84,4 +93,37 @@ public class SearchPageObject extends MainPageObject{
     {
         this.assertElementNotPresent(By.xpath(SEARCH_RESULT_ELEMENT), "We supposed not to find any result.");
     }
+
+    public void assertPresenceSearchFieldOnPage(String expected) {
+        String expected_title = SearchInputElement(expected);
+    this.assertPresenceOfElement(By.xpath(SEARCH_INIT_ELEMENT), "Cannot find 'Поиск по Википедии'change xpath", 5, "We see unexpected title" + expected_title, expected_title);
+    }
+
+    public void waitEmptyResultsAfterCancelSearch()
+    {
+        this.waitForElementNotPresent(By.id(SEARCH_RESULT_CONTAINER),"We see unexpected search result.",10);
+    }
+
+    public void assertPresenceItemTitleElement(String expected) {
+        String expected_title = SearchInputElement(expected);
+        this.assertPresenceOfElement(By.id(SEARCH_RESULT_CONTAINER), "Cannot find RESULT change xpath", 5, "We see unexpected title " + expected_title, expected_title);
+    }
+
+    public void waitForAllHeadlinesResultInPage() {
+        String title_element_text = this.waitForElementAndGetAttribute(By.id(SEARCH_RESULT_CONTAINER), "text", "Cannot find title name get attribute text", 5);
+//        System.out.println(title_element_text);
+        List<WebElement> article_title = driver.findElements(By.id(SEARCH_RESULT_CONTAINER));
+//        String title_element_text = title_element.getText();
+
+        for (WebElement title : article_title) {
+            String display_title = title.getAttribute("text");
+//            System.out.println(display_title);
+            assertTrue("Cannot find "+ title_element_text +" title for each article.",
+                    display_title.contains(title_element_text));
+//            Метод contains() - сверяет с тем что в скобках(не строго)
+        }
+    }
+
+
 }
+
