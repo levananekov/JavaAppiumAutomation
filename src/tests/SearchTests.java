@@ -63,10 +63,9 @@ public class SearchTests extends CoreTestCase
         int item_title = SearchPageObject.getAmountOfFoundArticls();
 
 //        System.out.println(item_title);
-        assertEquals(
+        assertTrue(
                 "Not found elements and it is no good)",
-                (item_title >= 2),
-                true
+                (item_title >= 2)
         );
 
         SearchPageObject.clickCancelSearch();
