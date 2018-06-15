@@ -72,4 +72,20 @@ public class SearchTests extends CoreTestCase
         SearchPageObject.clickCancelSearch();
         SearchPageObject.waitEmptyResultsAfterCancelSearch();
     }
+
+    @Test
+    public void testSearchTitleAndDescription()
+    {
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Ruby");
+        SearchPageObject.waitForElementByTitleAndDescription("Ruby",
+                "Variety of corundum, mineral, gemstone");
+        SearchPageObject.waitForElementByTitleAndDescription("Ruby Ridge",
+                "Standoff in Idaho in 1992");
+        SearchPageObject.waitForElementByTitleAndDescription("Ruby (programming language)",
+                "Programming language"
+                );
+    }
 }

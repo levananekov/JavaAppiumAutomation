@@ -18,7 +18,8 @@ public class SearchPageObject extends MainPageObject{
         SEARCH_RESULT_ELEMENT = "//*[@resource-id = 'org.wikipedia:id/search_results_list']/*[@resource-id = 'org.wikipedia:id/page_list_item_container']",
         SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text ='No results found']",
         SEARCH_INPUT_TEXT = "{SUBSTRING}",
-        SEARCH_RESULT_CONTAINER ="org.wikipedia:id/page_list_item_title";
+        SEARCH_RESULT_CONTAINER ="org.wikipedia:id/page_list_item_title",
+        SEARCH_RESULT_WHERE_TITLE_AND_SUBSTRING_TPL = "//*[android.widget.LinearLayout/*[@index=0 and @text='{TITLE}'] and android.widget.LinearLayout/*[@index=1 and @text='{SUBSTRING}']]";
 
 
     public SearchPageObject(AppiumDriver driver)
@@ -35,6 +36,10 @@ public class SearchPageObject extends MainPageObject{
     private static String SearchInputElement(String expected)
     {
         return SEARCH_INPUT_TEXT.replace("{SUBSTRING}",expected);
+    }
+
+    private static String getResultSearchTitleAndSubstring(String title, String substring) {
+        return SEARCH_RESULT_WHERE_TITLE_AND_SUBSTRING_TPL.replace("{TITLE}", title).replace("{SUBSTRING}", substring);
     }
     /* TEMPLATES METHODS */
 
@@ -118,12 +123,18 @@ public class SearchPageObject extends MainPageObject{
         for (WebElement title : article_title) {
             String display_title = title.getAttribute("text");
 //            System.out.println(display_title);
-            assertTrue("Cannot find "+ title_element_text +" title for each article.",
+            assertTrue("Cannot find " + title_element_text + " title for each article.",
                     display_title.contains(title_element_text));
 //            Метод contains() - сверяет с тем что в скобках(не строго)
         }
     }
 
-
+    public void waitForElementByTitleAndDescription(String title, String substring)
+        {
+            this.waitForElementPresent(By.xpath(getResultSearchTitleAndSubstring(title, substring)),
+                    "Cannot find search result where title '" + title + "' and substring " + substring,
+                    10);
+//            поиск xpath 2х элементов заголовка и описания
+        }
 }
 
