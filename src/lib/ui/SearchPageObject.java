@@ -101,7 +101,7 @@ public class SearchPageObject extends MainPageObject{
 
     public void assertPresenceSearchFieldOnPage(String expected) {
         String expected_title = SearchInputElement(expected);
-    this.assertPresenceOfElement(By.xpath(SEARCH_INIT_ELEMENT), "Cannot find 'Поиск по Википедии'change xpath", 5, "We see unexpected title" + expected_title, expected_title);
+    this.assertPresenceTheElementTextByTitle(By.xpath(SEARCH_INIT_ELEMENT), "Cannot find 'Поиск по Википедии'change xpath", 5, "We see unexpected title" + expected_title, expected_title);
     }
 
     public void waitEmptyResultsAfterCancelSearch()
@@ -111,7 +111,7 @@ public class SearchPageObject extends MainPageObject{
 
     public void assertPresenceItemTitleElement(String expected) {
         String expected_title = SearchInputElement(expected);
-        this.assertPresenceOfElement(By.id(SEARCH_RESULT_CONTAINER), "Cannot find RESULT change xpath", 5, "We see unexpected title " + expected_title, expected_title);
+        this.assertPresenceTheElementTextByTitle(By.id(SEARCH_RESULT_CONTAINER), "Cannot find RESULT change xpath", 5, "We see unexpected title " + expected_title, expected_title);
     }
 
     public void waitForAllHeadlinesResultInPage() {

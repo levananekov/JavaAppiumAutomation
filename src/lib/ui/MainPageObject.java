@@ -57,7 +57,7 @@ public class MainPageObject {
         return element;
     }
 
-    public void assertPresenceOfElement(By by, String error_message, long timeoutInSeconds, String assertMassage, String expected) {
+    public void assertPresenceTheElementTextByTitle(By by, String error_message, long timeoutInSeconds, String assertMassage, String expected) {
         WebElement element = waitForElementPresent(by, error_message, 5);
         String article_title = element.getAttribute("text");
         Assert.assertEquals(
