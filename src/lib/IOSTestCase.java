@@ -30,9 +30,6 @@ public class IOSTestCase extends TestCase {
 //        вот беда оно переворачивает с ног на голову эмулятор если менять оринетацию эмулятора в ручну (ее не трогать)
 
         driver = new IOSDriver(new URL(AppiumURL), capabilities);
-//      http://localhost:4723)
-//
-//
 //      this.rotateScreenPortrait(); - чет сомнительно, а надо ли это, тоже после запуска переход в портрет
     }
 
