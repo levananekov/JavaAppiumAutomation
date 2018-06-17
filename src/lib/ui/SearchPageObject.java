@@ -11,15 +11,15 @@ import static junit.framework.TestCase.assertTrue;
 public class SearchPageObject extends MainPageObject{
 
     private static final String
-        SEARCH_INIT_ELEMENT = "//*[contains(@text,'Search Wikipedia')]",
-        SEARCH_INPUT = "//*[@text='Search…']",
-        SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='{SUBSTRING}']",
-        SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn",
-        SEARCH_RESULT_ELEMENT = "//*[@resource-id = 'org.wikipedia:id/search_results_list']/*[@resource-id = 'org.wikipedia:id/page_list_item_container']",
-        SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text ='No results found']",
+        SEARCH_INIT_ELEMENT = "xpath://*[contains(@text,'Search Wikipedia')]",
+        SEARCH_INPUT = "xpath://*[@text='Search…']",
+        SEARCH_RESULT_BY_SUBSTRING_TPL = "xpath://*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text='{SUBSTRING}']",
+        SEARCH_CANCEL_BUTTON = "id:org.wikipedia:id/search_close_btn",
+        SEARCH_RESULT_ELEMENT = "xpath://*[@resource-id = 'org.wikipedia:id/search_results_list']/*[@resource-id = 'org.wikipedia:id/page_list_item_container']",
+        SEARCH_EMPTY_RESULT_ELEMENT = "xpath://*[@text ='No results found']",
         SEARCH_INPUT_TEXT = "{SUBSTRING}",
-        SEARCH_RESULT_CONTAINER ="org.wikipedia:id/page_list_item_title",
-        SEARCH_RESULT_WHERE_TITLE_AND_SUBSTRING_TPL = "//*[android.widget.LinearLayout/*[@index=0 and @text='{TITLE}'] and android.widget.LinearLayout/*[@index=1 and @text='{SUBSTRING}']]";
+        SEARCH_RESULT_CONTAINER ="id:org.wikipedia:id/page_list_item_title",
+        SEARCH_RESULT_WHERE_TITLE_AND_SUBSTRING_TPL = "xpath://*[android.widget.LinearLayout/*[@index=0 and @text='{TITLE}'] and android.widget.LinearLayout/*[@index=1 and @text='{SUBSTRING}']]";
 
 
     public SearchPageObject(AppiumDriver driver)
@@ -46,80 +46,81 @@ public class SearchPageObject extends MainPageObject{
 
     public void initSearchInput()
     {
-        this.waitForElementAndClick(By.xpath(SEARCH_INIT_ELEMENT), "Cannot find click search init element", 5);
-        this.waitForElementPresent(By.xpath(SEARCH_INIT_ELEMENT),"Cannot find search input after clicking search init element.");
+        this.waitForElementAndClick(SEARCH_INIT_ELEMENT, "Cannot find click search init element", 5);
+        this.waitForElementPresent(SEARCH_INIT_ELEMENT,"Cannot find search input after clicking search init element.");
     }
 
     public void waitForCancelButtonToAppear()
     {
-        this.waitForElementPresent(By.id(SEARCH_CANCEL_BUTTON),"Cannot find search cancel button",5);
+        this.waitForElementPresent(SEARCH_CANCEL_BUTTON,"Cannot find search cancel button",5);
     }
 
     public void waitForCancelButtonToDisappear()
     {
-        this.waitForElementNotPresent(By.id(SEARCH_CANCEL_BUTTON),"Search cancel button is still present",5);
+        this.waitForElementNotPresent(SEARCH_CANCEL_BUTTON,"Search cancel button is still present",5);
     }
 
     public void clickCancelSearch()
     {
-        this.waitForElementAndClick(By.id(SEARCH_CANCEL_BUTTON), "Cannot find and click search cancel button.", 5);
+        this.waitForElementAndClick(SEARCH_CANCEL_BUTTON, "Cannot find and click search cancel button.", 5);
     }
 
     public void typeSearchLine(String search_line)
     {
-        this.waitForElementAndSendKeys(By.xpath(SEARCH_INPUT),search_line,"Cannot find and type into search input",5);
+        this.waitForElementAndSendKeys(SEARCH_INPUT,search_line,"Cannot find and type into search input",5);
     }
 
     public void waitForSearchResult(String substring)
     {
         String search_result_xpath = getResultSearchElement(substring);
-        this.waitForElementPresent(By.xpath(search_result_xpath),"Cannot find search result with substring"+substring);
+        this.waitForElementPresent(search_result_xpath,"Cannot find search result with substring"+substring);
     }
 
     public void clickByArticleWishSubtring(String substring)
     {
         String search_result_xpath = getResultSearchElement(substring);
-        this.waitForElementAndClick(By.xpath(search_result_xpath),"Cannot find and click search result with substring"+substring,10);
+        this.waitForElementAndClick(search_result_xpath,"Cannot find and click search result with substring"+substring,10);
     }
 
     public int getAmountOfFoundArticls()
     {
-        this.waitForElementPresent(By.xpath(SEARCH_RESULT_ELEMENT), "Cannot find anything by the request ", 15
+        this.waitForElementPresent(SEARCH_RESULT_ELEMENT, "Cannot find anything by the request ", 15
         );
-        return this.getAmountOfElements(By.xpath(SEARCH_RESULT_ELEMENT));
+        return this.getAmountOfElements(SEARCH_RESULT_ELEMENT);
     }
 
     public void waitForEmptyResultsLable()
     {
-        this.waitForElementPresent(By.xpath(SEARCH_EMPTY_RESULT_ELEMENT),"Cannot find empty result element", 15);
+        this.waitForElementPresent(SEARCH_EMPTY_RESULT_ELEMENT,"Cannot find empty result element", 15);
     }
 
     public void assertThereIsNoResultOfSearch()
     {
-        this.assertElementNotPresent(By.xpath(SEARCH_RESULT_ELEMENT), "We supposed not to find any result.");
+        this.assertElementNotPresent(SEARCH_RESULT_ELEMENT, "We supposed not to find any result.");
     }
 
     public void assertPresenceSearchFieldOnPage(String expected) {
         String expected_title = SearchInputElement(expected);
-    this.assertPresenceTheElementTextByTitle(By.xpath(SEARCH_INIT_ELEMENT), "Cannot find 'Поиск по Википедии'change xpath", 5, "We see unexpected title" + expected_title, expected_title);
+    this.assertPresenceTheElementTextByTitle(SEARCH_INIT_ELEMENT, "Cannot find 'Поиск по Википедии'change xpath", 5, "We see unexpected title" + expected_title, expected_title);
     }
 
     public void waitEmptyResultsAfterCancelSearch()
     {
-        this.waitForElementNotPresent(By.id(SEARCH_RESULT_CONTAINER),"We see unexpected search result.",10);
+        this.waitForElementNotPresent(SEARCH_RESULT_CONTAINER,"We see unexpected search result.",10);
     }
 
     public void assertPresenceItemTitleElement(String expected) {
         String expected_title = SearchInputElement(expected);
-        this.assertPresenceTheElementTextByTitle(By.id(SEARCH_RESULT_CONTAINER), "Cannot find RESULT change xpath", 5, "We see unexpected title " + expected_title, expected_title);
+        this.assertPresenceTheElementTextByTitle(SEARCH_RESULT_CONTAINER, "Cannot find RESULT change xpath", 5, "We see unexpected title " + expected_title, expected_title);
     }
 
     public void waitForAllHeadlinesResultInPage() {
-        String title_element_text = this.waitForElementAndGetAttribute(By.id(SEARCH_RESULT_CONTAINER), "text", "Cannot find title name get attribute text", 5);
-//        System.out.println(title_element_text);
-        List<WebElement> article_title = driver.findElements(By.id(SEARCH_RESULT_CONTAINER));
-//        String title_element_text = title_element.getText();
+        String title_element_text = this.waitForElementAndGetAttribute(SEARCH_RESULT_CONTAINER, "text", "Cannot find title name get attribute text", 5);
+        System.out.println(title_element_text);
 
+        String locator = SEARCH_RESULT_CONTAINER;
+        By by = this.getLocatorByString(locator);
+        List<WebElement> article_title = driver.findElements(by);
         for (WebElement title : article_title) {
             String display_title = title.getAttribute("text");
 //            System.out.println(display_title);
@@ -131,7 +132,7 @@ public class SearchPageObject extends MainPageObject{
 
     public void waitForElementByTitleAndDescription(String title, String substring)
         {
-            this.waitForElementPresent(By.xpath(getResultSearchTitleAndSubstring(title, substring)),
+            this.waitForElementPresent(getResultSearchTitleAndSubstring(title, substring),
                     "Cannot find search result where title '" + title + "' and substring " + substring,
                     10);
 //            поиск xpath 2х элементов заголовка и описания
