@@ -118,8 +118,8 @@ public class SearchPageObject extends MainPageObject{
         String title_element_text = this.waitForElementAndGetAttribute(SEARCH_RESULT_CONTAINER, "text", "Cannot find title name get attribute text", 5);
         System.out.println(title_element_text);
 
-        String locator = SEARCH_RESULT_CONTAINER;
-        By by = this.getLocatorByString(locator);
+//        String locator = SEARCH_RESULT_CONTAINER;
+        By by = this.getLocatorByString(SEARCH_RESULT_CONTAINER);
         List<WebElement> article_title = driver.findElements(by);
         for (WebElement title : article_title) {
             String display_title = title.getAttribute("text");
