@@ -52,12 +52,12 @@ abstract public class ArticlePageObject extends MainPageObject
         if (Platform.getInstance().isAndroid()){
             this.swipeUpToFindElement(
                     FOOTER_ELEMENT,
-                    "Cannot find the end of article",
+                    "Cannot find the end of article Android",
                     40);
         } else {
             this.swipeUpTillElementAppear(
                     FOOTER_ELEMENT,
-                    "Cannot find the end of article",
+                    "Cannot find the end of article IOS",
                     40);
         }
 
