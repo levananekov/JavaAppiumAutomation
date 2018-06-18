@@ -3,13 +3,14 @@ package tests;
 import lib.CoreTestCase;
 import lib.ui.ArticlePageObject;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
 public class ArticleTests extends CoreTestCase
 {
     @Test
     public void testCompareArticleTitle() {
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject =  SearchPageObjectFactory.get(driver);
 
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Java");
@@ -29,7 +30,7 @@ public class ArticleTests extends CoreTestCase
     @Test
     public void testSwipeArticle() {
 
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject =  SearchPageObjectFactory.get(driver);
 
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Appium");
@@ -43,14 +44,14 @@ public class ArticleTests extends CoreTestCase
 
     @Test
     public void testAssertTitleTest() {
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject =  SearchPageObjectFactory.get(driver);
         SearchPageObject.assertPresenceSearchFieldOnPage("Search Wikipedia");
     }
 
     @Test
     public void testCompareAllHeadlines() {
 
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Python");
         SearchPageObject.assertPresenceItemTitleElement("Python");
@@ -59,7 +60,7 @@ public class ArticleTests extends CoreTestCase
 
     @Test
     public void testAssertTitle() {
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject =  SearchPageObjectFactory.get(driver);
 
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine("Java");
