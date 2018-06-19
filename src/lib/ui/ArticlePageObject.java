@@ -49,7 +49,8 @@ abstract public class ArticlePageObject extends MainPageObject
 
     public void swipeToFooter()
     {
-        if (Platform.getInstance().isAndroid()){
+        if (Platform.getInstance().isAndroid())
+        {
             this.swipeUpToFindElement(
                     FOOTER_ELEMENT,
                     "Cannot find the end of article Android",
@@ -104,7 +105,7 @@ abstract public class ArticlePageObject extends MainPageObject
 
     }
 
-    public void clouseArticle()
+    public void closeArticle()
     {
         this.waitForElementAndClick(
                 CLOSE_ARTICLE_BUTTON,
@@ -145,6 +146,12 @@ abstract public class ArticlePageObject extends MainPageObject
         this.assertElementPresent(
                 TITLE_ARTICLE_ELEMENT,
                 "Cannot find ArticleTitle");
+    }
+
+
+    public void addArticlesToMySaved()
+    {
+        this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON,"Cannot find option to add to my reading list",5);
     }
 
 }
