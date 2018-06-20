@@ -105,7 +105,6 @@ public class MyListsTest extends CoreTestCase
 //            MyListsPageObject.waitForArticleToAppearByTitle(article_title_second);
         }else {
             MyListsPageObject.swipeByArticleToDelete(article_title);
-
         }
     }
 }

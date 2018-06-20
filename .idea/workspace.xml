@@ -3,22 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a20f261f-3bab-4737-be8f-b7fd8888a0dc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/CoreTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/CoreTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/ArticlePageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/ArticlePageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/IOS/IOSArticlePageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/IOS/IOSArticlePageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/IOS/IOSMyListsPageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/IOS/IOSMyListsPageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/IOS/IOSSearchPageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/IOS/IOSSearchPageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/MainPageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/MainPageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/MyListsPageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/MyListsPageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/SearchPageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/lib/ui/SearchPageObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/tests/MyListsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/tests/MyListsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/CoreTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/CoreTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/IOS/IOSArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/IOS/IOSArticlePageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/IOS/IOSSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/IOS/IOSSearchPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/ui/MyListsPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/MyListsPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/MyListsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/MyListsTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyListsTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyListsTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/MyListsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+            <state relative-caret-position="299">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyListsPageObject.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyListsPageObject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lib/ui/MyListsPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state relative-caret-position="315">
+              <caret line="21" column="7" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="21" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#658#659#0" expanded="true" />
@@ -134,8 +119,8 @@
       <find>addArticlesToMySaved</find>
       <find>clickMyLists</find>
       <find>Print</find>
-      <find>checkArticleIsStillPresentByContentsItem</find>
       <find>waitForArticleToDisappearByTitle</find>
+      <find>checkArticleIsStillPresentByContentsItem</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,9 +157,9 @@
         <option value="$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/IOS/IOSArticlePageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/MyListsPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/IOS/IOSMyListsPageObject.java" />
         <option value="$PROJECT_DIR$/src/tests/MyListsTest.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/MyListsPageObject.java" />
       </list>
     </option>
   </component>
@@ -935,24 +920,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MyListsPageObject.java">
+    <entry file="file://$PROJECT_DIR$/src/tests/MyListsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="299">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/MyListsTest.java">
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/MyListsPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="315">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="21" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
           </folding>
         </state>
       </provider>
