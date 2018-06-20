@@ -188,6 +188,7 @@ public class MainPageObject {
 
     public  void assertElementPresent(String locator, String error_message)
     {
+
         By by = this.getLocatorByString(locator);
         Assert.assertTrue(
                 error_message,
@@ -205,6 +206,8 @@ public class MainPageObject {
             return By.xpath(locator);
         }else if(by_type.equals("id")) {
             return  By.id(locator);
+        }else if(by_type.equals("name")) {
+            return  By.name(locator);
         }else {
             throw new IllegalArgumentException("Cannot get type of locator. Locator: " + locator_with_type);
         }

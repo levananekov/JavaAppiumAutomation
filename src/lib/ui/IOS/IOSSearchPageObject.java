@@ -16,6 +16,8 @@ public class IOSSearchPageObject extends SearchPageObject
         SEARCH_INPUT_TEXT = "{SUBSTRING}";
         SEARCH_RESULT_CONTAINER = "id:org.wikipedia:id/page_list_item_title";
         SEARCH_RESULT_WHERE_TITLE_AND_SUBSTRING_TPL = "xpath://*[android.widget.LinearLayout/*[@index=0 and @text='{TITLE}'] and android.widget.LinearLayout/*[@index=1 and @text='{SUBSTRING}']]";
+        CLEAR_SEARCH_INPUT_WITH_TEXT = "id:clear mini";
+
     }
 
     public IOSSearchPageObject(AppiumDriver driver){

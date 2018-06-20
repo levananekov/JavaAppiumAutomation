@@ -8,6 +8,7 @@ abstract public class ArticlePageObject extends MainPageObject
 {
     protected static String
         TITLE,
+        TITLE_SECOND,
         FOOTER_ELEMENT,
         OPTIONS_BUTTON,
         OPTIONS_ADD_TO_MY_LIST_BUTTON,
@@ -35,6 +36,12 @@ abstract public class ArticlePageObject extends MainPageObject
     {
         return this.waitForElementPresent(TITLE,"Cannot find article title on page", 15);
     }
+
+    public WebElement waitForSecondTitleElement()
+    {
+        return this.waitForElementPresent(TITLE_SECOND,"Cannot find article title on page", 15);
+    }
+
 
     public String getArticleTitle()
     {

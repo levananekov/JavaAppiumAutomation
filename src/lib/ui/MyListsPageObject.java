@@ -7,19 +7,23 @@ abstract public class MyListsPageObject extends MainPageObject
 {
     protected static String
             FOLDER_BY_NAME_TPL,
-            ARTICLE_BY_TITLE_TMP;
+            ARTICLE_BY_TITLE_TMP,
+            LABEL_BY_XPATH_TITLE_TMP;
 
-//    Java (programming language)
 
     private static String getFolderXpathByName(String name_of_folder)
     {
         return FOLDER_BY_NAME_TPL.replace("{FOLDER_NAME}",name_of_folder);
     }
 
-    private static String getSavedArticleXpathByTitle(String article_title)
+    private static String getSavedArticleXpathByTitle(String title)
     {
-        return ARTICLE_BY_TITLE_TMP.replace("{TITLE}",article_title);
+        return LABEL_BY_XPATH_TITLE_TMP.replace("{TITLE}",title);
     }
+
+//    private static String getTitleXpathByName(String title) {
+//        return ARTICLE_BY_TITLE_TPL.replace("{TITLE}", title);
+//    }
 
 
 
@@ -48,9 +52,19 @@ abstract public class MyListsPageObject extends MainPageObject
         );
     }
 
+    public void waitForXpathToAppearByTitle(String article_title)
+    {
+        String article_xpath = getSavedArticleXpathByTitle(article_title);
+        this.waitForElementPresent(
+                article_xpath,
+                "Cannot find saved by title" +article_title,
+                15
+        );
+    }
+
     public void waitForArticleToDisappearByTitle(String article_title)
     {
-        String article_xpath = getFolderXpathByName(article_title);
+        String article_xpath = getFolderXpathByName( article_title);
         this.waitForElementNotPresent(
                 article_xpath,
                 "Saved article till present wish title"+ article_title,
@@ -73,4 +87,9 @@ abstract public class MyListsPageObject extends MainPageObject
         this.waitForArticleToDisappearByTitle(article_title);
     }
 
+    public void getSubtitleOfArticleByName(String name) {
+        System.out.println(this.waitForElementPresent(getTitleXpathByName(name) + "/../TextView[1]",
+                "Can't find target article with title" + name,
+                30
+        ).getText());
 }

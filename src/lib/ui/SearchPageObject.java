@@ -19,7 +19,8 @@ abstract public class SearchPageObject extends MainPageObject{
         SEARCH_EMPTY_RESULT_ELEMENT,
         SEARCH_INPUT_TEXT,
         SEARCH_RESULT_CONTAINER,
-        SEARCH_RESULT_WHERE_TITLE_AND_SUBSTRING_TPL;
+        SEARCH_RESULT_WHERE_TITLE_AND_SUBSTRING_TPL,
+        CLEAR_SEARCH_INPUT_WITH_TEXT;
 
 
     public SearchPageObject(AppiumDriver driver)
@@ -137,5 +138,13 @@ abstract public class SearchPageObject extends MainPageObject{
                     10);
 //            поиск xpath 2х элементов заголовка и описания
         }
+
+    public void waitAndClearInputSearch() {
+        this.waitForElementAndClick(
+                CLEAR_SEARCH_INPUT_WITH_TEXT,
+                "Cannot find clear search button 'X'.",
+                5
+        );
+    }
 }
 

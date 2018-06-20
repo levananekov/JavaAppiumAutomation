@@ -62,25 +62,50 @@ public class MyListsTest extends CoreTestCase
         ArticlePageObject.waitForTitleElement();
         String article_title = ArticlePageObject.getArticleTitle();
         String article_title_second = "Python (programming language)";
-        System.out.println(article_title);
-        String name_of_folder ="Learning programming";
-        ArticlePageObject.addArticleToMyList(name_of_folder);
+//        System.out.println(article_title);
+//        String name_of_folder ="Learning programming";
+        if (Platform.getInstance().isAndroid())
+        {
+            ArticlePageObject.addArticleToMyList(name_of_folder);
+        }else {
+            ArticlePageObject.addArticlesToMySaved();
+        }
         ArticlePageObject.closeArticle();
 
         SearchPageObject.initSearchInput();
+        if (Platform.getInstance().isIOS()) {
+            SearchPageObject.waitAndClearInputSearch();
+        }
+
         SearchPageObject.typeSearchLine("Python");
         SearchPageObject.clickByArticleWishSubtring("General-purpose, high-level programming language");
-        ArticlePageObject.waitForTitleElement();
-        ArticlePageObject.addArticleToMyListAgain(name_of_folder);
+        ArticlePageObject.waitForSecondTitleElement();
+        if (Platform.getInstance().isAndroid())
+        {
+            ArticlePageObject.addArticleToMyListAgain(article_title_second);
+        }else {
+            ArticlePageObject.addArticlesToMySaved();
+        }
+        ArticlePageObject.closeArticle();
+
 
         NavigationUI NavigationUI = NavigationUIFactory.get(driver);
         NavigationUI.clickMyLists();
 
         MyListsPageObject MyListsPageObject = MyListsPageObjectFactory.get(driver);
-        MyListsPageObject.openFolderByName(name_of_folder);
-        MyListsPageObject.swipeByArticleToDelete(article_title);
-        MyListsPageObject.waitForArticleToDisappearByTitle(article_title);
-        MyListsPageObject.waitForArticleToAppearByTitle(article_title_second);
 
+        if (Platform.getInstance().isAndroid()){
+            MyListsPageObject.openFolderByName(name_of_folder);
+            MyListsPageObject.swipeByArticleToDelete(article_title);
+            MyListsPageObject.waitForArticleToDisappearByTitle(article_title);
+
+            MyListsPageObject.waitForArticleToAppearByTitle(article_title_second);
+
+//            Проверить что статейка все такие есть по другому
+//            MyListsPageObject.waitForArticleToAppearByTitle(article_title_second);
+        }else {
+            MyListsPageObject.swipeByArticleToDelete(article_title);
+
+        }
     }
 }
