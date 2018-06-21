@@ -59,18 +59,22 @@ abstract public class MyListsPageObject extends MainPageObject
         );
     }
 
+
     public void swipeByArticleToDelete(String article_title)
     {
         this.waitForArticleToAppearByTitle(article_title);
         String article_xpath = getFolderXpathByName(article_title);
+
         this.swipeElementToLeft(
                 article_xpath,
                 "Cannot find saved article "+article_title
         );
+
         if (Platform.getInstance().isIOS()){
             this.clickElementToTheRightUpperCorner(article_xpath,"Cannot find saved article IOS "+article_title);
         }
         System.out.println(article_xpath);
+
         this.waitForArticleToDisappearByTitle(article_title);
     }
 
